@@ -62,7 +62,7 @@ button:hover {
   position: relative;
   width: 700px;
   height: 400px;
-  background-image: url("/images/bg-2.png");
+  background-image: url("/01/images/bg-2.png");
   background-size: cover;
 }
 #content h1 {
@@ -75,7 +75,7 @@ button:hover {
   text-decoration: none;
 }
 #content section {
-  background-color: white;
+  background-color: bisque;
   height: 100%;
   width: 60%;
   right: 0;
@@ -87,6 +87,14 @@ h3 {
   color: #8deb62;
   position: relative;
   top: -50px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */

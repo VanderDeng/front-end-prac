@@ -1,3 +1,5 @@
+@import './theme.scss';
+
 body{
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -57,13 +59,14 @@ button:hover{
     cursor: pointer;
 }
 
+
 /* content */
 
 #content {
     position: relative;
     width: 700px;
     height: 400px;
-    background-image: url("/images/bg-2.png");
+    background-image: url("/01/images/bg-2.png");
     background-size: cover;
     
     h1{
@@ -76,8 +79,8 @@ button:hover{
         top: 50px;
         text-decoration: none;
     }
-    section{
-        background-color: white;
+    section {
+        background-color:$primary-color;
         height: 100%;
         width: 60%;
         right: 0;
@@ -91,5 +94,13 @@ h3{
     color: rgb(141, 235, 98);
     position: relative;
     top: -50px;
+}
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
 }
 
