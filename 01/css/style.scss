@@ -1,0 +1,95 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+    color: rgb(110, 110, 112);
+}
+
+/* card */
+#card{
+    position: relative;
+    width: 320px;
+}
+
+section > h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+span{
+    position: absolute;
+    font-size: 15px;
+    top: 20px;
+    right: 10px;
+    margin: 5px;
+    padding: 5px 15px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+}
+
+.mask{
+    width:100%;
+	position: absolute;
+	bottom:0;
+	height: 70%;
+	background-image: -webkit-linear-gradient(top, hsla(0,0%,100%,0), #fff);
+	background-image: -moz-linear-gradient(top, hsla(0,0%,100%,0), #fff);
+	background-image: -o-linear-gradient(top, hsla(0,0%,100%,0), #fff);
+	background-image: linear-gradient(top, hsla(0,0%,100%,0), #fff);
+}
+
+button{
+    position: absolute;
+    background: linear-gradient(to right, #0804e7, #2781e7);
+    font-size: 16px;
+    color: white;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 30px;
+    padding: 8px 15px;
+    margin: 5px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+/* content */
+
+#content {
+    position: relative;
+    width: 700px;
+    height: 400px;
+    background-image: url("/images/bg-2.png");
+    background-size: cover;
+    
+    h1{
+        position: relative;
+        top: 50px;
+    }
+    
+    a{
+        position: relative;
+        top: 50px;
+        text-decoration: none;
+    }
+    section{
+        background-color: white;
+        height: 100%;
+        width: 60%;
+        right: 0;
+        position: absolute;
+        padding: 20px;
+    }
+}
+
+
+h3{
+    color: rgb(141, 235, 98);
+    position: relative;
+    top: -50px;
+}
+
