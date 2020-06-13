@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="j_cbAll">
+                    </th>
+                    <th>items</th>
+                    <th>price</th>
+                </tr>
+            </thead>
+            <tbody id="j_tb">
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>iphone11</td>
+                    <td>7000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>ipad pro</td>
+                    <td>6000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>apple watch</td>
+                    <td>3500</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // 1.select all by checkbox, use checked
+        var j_cbAll = document.getElementById('j_cbAll');
+        var j_tbs = document.getElementById('j_tb').getElementsByTagName('input');
+        j_cbAll.onclick = function() {
+                // this.check when the itmes is choosen then show ture instead of false
+                console.log(this.checked);
+                for (var i = 0; i < j_tbs.length; i++) {
+                    j_tbs[i].checked = this.checked;
+                }
+
+            }
+            // need to select all the childbox then the "selectAll" will be selected. use for loop to bindevent.
+        for (var i = 0; i < j_tbs.length; i++) {
+            j_tbs[i].onclick = function() {
+                // control the j_cbALL button
+                var flag = true;
+                for (var i = 0; i < j_tbs.length; i++) {
+                    if (!j_tbs[i].checked) {
+                        flag = false;
+                        break; //exit the for loop, cause if one of them is not be selected, then the loop will be useless
+                    }
+                }
+                j_cbAll.checked = flag;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

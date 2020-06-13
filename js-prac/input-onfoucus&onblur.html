@@ -1,0 +1,80 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 600px;
+            margin: 100px auto;
+        }
+        
+        .message {
+            display: inline-block;
+            font-size: 12px;
+            color: #999;
+            padding-left: 20px;
+        }
+        
+        .wrong {
+            color: red;
+        }
+        
+        .right {
+            color: green;
+        }
+        
+        input {
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" value="phone">
+
+    <div class="register">
+        <input type="password" class="ipt">
+        <p class="message">please input password between 6-16 charactors</p>
+
+    </div>
+    <script>
+        // 1.get element
+        var text = document.querySelector('input');
+        // 2. onfocus
+        text.onfocus = function() {
+                if (this.value === 'phone') {
+                    this.value = '';
+
+                }
+                // change the font color to dark
+                this.style.color = '#333';
+            }
+            // 3.onblur
+        text.onblur = function() {
+            if (this.value === '') {
+                this.value = 'phone';
+            }
+            // change the font color to light
+            this.style.color = '#999';
+
+        }
+
+        // detective the input number
+        var ipt = document.querySelector('.ipt');
+        var message = document.querySelector('.message');
+        ipt.onblur = function() {
+            if (this.value.length < 6 || this.value.length > 16) {
+                message.className = 'message wrong'
+                message.innerHTML = 'please input the correct charactors'
+            } else {
+                message.className = 'message right'
+                message.innerHTML = 'input correct'
+            }
+        }
+    </script>
+</body>
+
+</html>
