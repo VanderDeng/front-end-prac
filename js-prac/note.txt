@@ -1,0 +1,17 @@
+4.H5自定义属性
+目的：为了保存数据并使用，有些数据可以保存到页面中而不是数据库中
+
+data-开头为自定义属性
+div.setAttribute('data-time',20)
+获取属性方法：getArrtibute或者div.dataset.index
+
+5.节点操作
+网页中的所有内容都是节点，在dom中节点用node表示，html dom树中的所有节点均可以通过js进行访问，所有html元素也可以被修改创建或者删除。
+父节点：xxx.parentNode 得到的是离元素最近的父节点，没有则返回null
+子节点：ul.childNodes 包含元素节点和文本节点。需要用for循环遍历取出nodetype =1 取出。所以一般使用：ul.children即可。其中还有：firstElementChild,lastElementChild(IE9以上支持)。解决方案实际开发：ol.children[0],最后一个用ol.children.length-1。
+
+
+
+
+
+
