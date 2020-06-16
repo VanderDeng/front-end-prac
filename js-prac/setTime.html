@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="/images/reaper.gif" alt="ad">
+    <button>stop</button>
+    <script>
+        // // 可以写函数也可以写函数名
+        // // setTimeout(function() {
+        // //     console.log('time is up');
+
+        // // }, 2000);
+        // function callback() {
+        //     console.log('boom!!');
+
+        // }
+        // setTimeout(callback, 3000)
+
+        var ad = document.querySelector('img');
+        var btn = document.querySelector('button');
+
+        function closeAd() {
+            ad.style.display = 'none';
+        }
+        var timer = setTimeout(closeAd, 5000);
+
+        btn.addEventListener('click', function() {
+            clearTimeout(timer);
+        })
+
+        setInterval(function() {
+            console.log('keep output');
+
+        }, 1000);
+    </script>
+
+</body>
+
+</html>

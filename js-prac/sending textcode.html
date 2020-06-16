@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number"> <button>send</button>
+
+    <script>
+        var btn = document.querySelector('button');
+        var time = 3;
+        btn.addEventListener('click', function() {
+            btn.disabled = true;
+            var timer = setInterval(function() {
+                if (time === 0) {
+                    clearInterval(timer);
+                    btn.disabled = false;
+                    btn.innerHTML = 'send';
+                    time = 3;
+                } else {
+                    btn.innerHTML = 'there are' + time + 'second';
+                    time--;
+                }
+
+            }, 1000);
+        })
+    </script>
+</body>
+
+</html>
