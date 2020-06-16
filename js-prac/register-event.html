@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>传统注册事件</button>
+    <button>方法监听注册</button>
+
+    <div>123</div>
+
+    <script>
+        var btns = document.querySelectorAll('button');
+        btns[0].onclick = function() {
+            alert('hi')
+                // delete events
+            div[0].onclick = null;
+        }
+        btns[0].onclick = function() {
+                alert('how r u')
+            }
+            // delete
+        function fn() {
+            alert('22');
+            btns[1].removeEventListener('click', fn);
+        }
+
+        function fn1() {
+            alert('33')
+        }
+
+        btns[1].addEventListener('click', fn);
+        btns[1].addEventListener('click', fn1);
+
+        // 事件对象
+        var div = document.querySelector('div');
+        // div.onclick = function(event){}
+        div.addEventListener('click', function(e) {
+                console.log(e);
+
+            })
+            // event当形餐来看，是系统自动创建的。 事件对象可以自己命名，event, evt, e
+            // e = e || window.event;兼容性处理方法
+    </script>
+</body>
+
+</html>

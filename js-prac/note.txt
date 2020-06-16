@@ -1,3 +1,8 @@
+for (var k in obj){
+    k得到的是属性名
+    obj[k]得到的是属性值
+}
+
 4.H5自定义属性
 目的：为了保存数据并使用，有些数据可以保存到页面中而不是数据库中
 
@@ -9,6 +14,72 @@ div.setAttribute('data-time',20)
 网页中的所有内容都是节点，在dom中节点用node表示，html dom树中的所有节点均可以通过js进行访问，所有html元素也可以被修改创建或者删除。
 父节点：xxx.parentNode 得到的是离元素最近的父节点，没有则返回null
 子节点：ul.childNodes 包含元素节点和文本节点。需要用for循环遍历取出nodetype =1 取出。所以一般使用：ul.children即可。其中还有：firstElementChild,lastElementChild(IE9以上支持)。解决方案实际开发：ol.children[0],最后一个用ol.children.length-1。
+兄弟节点：.nextElementSibling .previousElementSibling
+创建节点：1.创建节点元素 var li = document.creatElement('li') ; var ul = document.querySelector('ul');  ul.appendChild(li);
+添加节点：node.insertBefore(child, 元素)
+删除节点：node.removeChild(child) 
+*组织链接跳转javascript:;
+复制节点：node.cloneNode(true)
+*不同浏览器下innerHTML（不要用拼接字符串，采取数组的形式）效率要比creatElement高
+
+**DOM重点核心**
+    文档对象模型（Document Objecgt Model），是w3c组织推荐的处理可扩展标记语言（html）的标准编程接口
+    w3c已经定义了一系列的dom接口，通过这些dom接口可以改变网页的内容，结构和样式。dom使html形成了domtree，获取dom是对象。
+    1.创建
+    creatElement
+    2.增加
+    appendChild,insertBefore
+    3.删除
+    removeChild
+    4.改
+    innerHTML,style,value,href
+    5.查
+    querySelector; 节点操作
+    6.属性操作
+    setAttribute, getAttribute
+    7.事件
+    onclick,onmouseover, onmouseout, onfocus, onblur...（addEventListener, removeEventListener）
+
+    *DOM事件流
+    捕获阶段：document-element-element body-element div; dom事件流事件：elementbody-element div; 冒泡阶段：倒序
+    addaddEventListener(",function(),true)则是捕获阶段，如果是false则是冒泡阶段。事件会根据dom进行传播，。实际开发中更关注冒泡
+    onblur,onfocus等没有冒泡。
+
+兼容处理：div.onclick function(){
+            e = e || window.event;}
+
+6. 常见事件对象触发：
+    e.target触发事件的对象
+    e.type返回事件的类型
+    e.preventDefault()阻止行为
+    return false;(没有版本兼容问题，但是后面所有的代卖都不执行)
+    *阻止冒泡：e.stopPropagation();低版本cancelBubble
+    *事件代理：不是每个子节点单独设置事件监听器，而是把事件监听器设置在父节点上，然后利用冒泡远离影响设置每个子节点。只操作了一次dom提高了性能
+
+7.常用鼠标事件
+    1.document.addaddEventListener('contextmenu', function(e){ 
+        e.preventDefault();
+    })  //取消默认的上下文菜单
+    2.document.addaddEventListener('selectstar', function(e){ 
+    e.preventDefault();
+    }) //禁止选中文字
+
+8.常用键盘事件
+    1.keyup, keydown, keypress判断按下
+    2.keyCode判断用户具体案件
+
+
+
+
+
+
+
+    
+
+
+
+
+
 
 
 
