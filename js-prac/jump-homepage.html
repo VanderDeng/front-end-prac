@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>click</button>
+    <div></div>
+    <script>
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        btn.addEventListener('click', function() {
+            location.href = 'http://www.bilibili.com'
+        })
+
+        var timer = 5;
+        setInterval(function() {
+            if (timer === 0) {
+                location.href = 'http://www.bilibili.com';
+            } else {
+                div.innerHTML = 'jump to the page after' + timer;
+                timer--;
+            }
+
+        }, 1000);
+    </script>
+</body>
+
+</html>

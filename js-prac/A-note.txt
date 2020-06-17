@@ -80,6 +80,46 @@ div.setAttribute('data-time',20)
 先执行执行栈中的同步任务，异步任务放到任务队列中。先把执行栈中的任务执行完毕再去任务队列执行，把队列中的任务放在执行栈之后。
 事件循环：主线程不断的重复获得任务，执行任务。
 
+源码分析案例：
+（function flexible(window,document){}()) 立即执行函数，创建了一个独立的作用域，里面变量都是局部变量
+var docEl = docment.documenteElement 获取根元素
+var dpr = window.devicePixelRatio || 1  物理像素比
+这是body字体大小：
+function setBodyFontSize(){}  大小*dpr + ‘px’
+function ()v{     //设置html元素的文字大小
+    ar rem = docEL.clientWidth/10
+docEl.style.fontsize = rem + 'px'}
+
+pageshow事件可以兼容火狐浏览器：window.addaddEventListener('pageshow', function(e){
+    // e.prsisted返回的的是true，是说如果这个页面是从缓存取过来的页面也需要重新机选一下rem大小。
+    if(e.persisted){
+        setRemUnit()
+    }
+})
+
+三大系列：
+offset获取元素位置 offsetLeft offsetTop
+client常用于获取元素大小 clientWidth ClientHeight
+scroll 常用于获取滚动距离 scrollTop scrollLeft; window.pageXOffset获得页面滚动距离
+
+mouseover: 经过自身盒子会触发，经过子盒子还会触发
+mouseenter: 只会触发自身盒子， 不会冒泡
+
+缓动动画公式：（目标值-现在的位置）- 10
+
+节流阀：让上一个动画执行完毕再执行下一个动画
+var flag = true;
+if(flag){flag = false; do sth}
+利用回调函数，动画执行完毕：flag = true
+
+轮播图p125
+
+短路运算符：callback && callback(); 先判断callback的true false
+
+
+
+
+
 
 
 
