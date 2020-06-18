@@ -116,6 +116,14 @@ if(flag){flag = false; do sth}
 
 短路运算符：callback && callback(); 先判断callback的true false
 
+**移动端开发**
+滚动过渡效果：ul.style.transition = 'all .3s'， 滚动效果ul.style.transform 
+classList H5新属性 classList[0]拿回第一个类名 ：
+div.classList.add('three'); div.classList.remove('three'); *div.class.toggle('bg')自动判断有则去掉，没有则加上。
+click延时解决方案：
+1.<meta name = "viewport" content = "user-scalable = no">
+2. 利用touch事件自己封装300ms延迟，记录当前触摸时间，离开时间-触摸时间 < 150ms 并且没有滑动则定义为点击。
+
 
 
 
