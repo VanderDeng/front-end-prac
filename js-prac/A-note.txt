@@ -123,6 +123,20 @@ div.classList.add('three'); div.classList.remove('three'); *div.class.toggle('bg
 click延时解决方案：
 1.<meta name = "viewport" content = "user-scalable = no">
 2. 利用touch事件自己封装300ms延迟，记录当前触摸时间，离开时间-触摸时间 < 150ms 并且没有滑动则定义为点击。
+3. js插件 swiper superslide iscroll zy.media
+
+前端框架：一整套的解决方案。 插件：某个功能的解决方案。
+
+本地存储：
+sessionStorage:生命周期为关闭浏览器窗口，同一个窗口下数据可以共享。
+localStorage:生命周期永久，同一个浏览器可以共享，都是键值对形式储存。
+
+
+**jQuery**
+$(function ()){  //入口函数
+    $('div').hide();
+}
+*DOM对象：用原生js获取过来的对象。  jQuery对象是个伪数组
 
 
 
