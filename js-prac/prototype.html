@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Array.prototype.sum = function() {
+        //     var sum = 0;
+        //     for (var i = 0; i < this.length; i++) {
+        //         sum += this[i];
+        //     }
+        //     return sum;
+        // }
+
+        // var arr = [1, 2, 3];
+        // console.log(arr.sum());
+        // console.log(Array.prototype);
+        // var arr1 = new Array(11, 22, 33);
+        // console.log(arr1.sum());
+
+        // function fn(x, y) {
+        //     console.log('i want drink coffee');
+        //     console.log(this);
+        //     console.log(x + y);
+
+
+
+        // }
+        // var o = {
+        //         name: 'andy',
+        //     }
+        //     // fn.call()
+        // fn.call(o, 1, 2);
+
+        function Father(uname, age) {
+            this.uname = uname;
+            this.age = age;
+        }
+
+        Father.prototype.money = function() {
+            console.log(100000);
+
+        };
+
+        function Son(uname, age, score) {
+            Father.call(this, uname, age);
+            this.score = score;
+        }
+        // Son.prototype = Father.prototype; 有问题，修改了子原型对象，父原型对象也会改
+        Son.prototype = new Father();
+        Son.prototype.exam = function() {
+            console.log('exam');
+
+        }
+        var son = new Son('ldh', 18, 100);
+        console.log(son);
+        console.log(Father.prototype);
+    </script>
+
+</body>
+
+</html>

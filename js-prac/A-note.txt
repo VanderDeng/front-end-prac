@@ -23,7 +23,7 @@ div.setAttribute('data-time',20)
 *不同浏览器下innerHTML（不要用拼接字符串，采取数组的形式）效率要比creatElement高
 
 **DOM重点核心**
-    文档对象模型（Document Objecgt Model），是w3c组织推荐的处理可扩展标记语言（html）的标准编程接口
+    文档对象模型（Document Object Model），是w3c组织推荐的处理可扩展标记语言（html）的标准编程接口
     w3c已经定义了一系列的dom接口，通过这些dom接口可以改变网页的内容，结构和样式。dom使html形成了domtree，获取dom是对象。
     1.创建
     creatElement
@@ -130,6 +130,21 @@ click延时解决方案：
 本地存储：
 sessionStorage:生命周期为关闭浏览器窗口，同一个窗口下数据可以共享。
 localStorage:生命周期永久，同一个浏览器可以共享，都是键值对形式储存。
+
+
+**ES6**
+*面向过程：性能比面向对象高，适合跟硬件紧密结合。没有对象容易维护，复用，扩展。
+*面向对象：易于维护，复用，扩展，由于封装继承和多态性，可以使系统更灵活易于维护。性能较低。
+class创建类，里面包含consuructor函数，在new生成实例的时候自动调用函数。
+
+Star.prototype.sing = function (){   //公共的方法放在原型对象里面，节约内存空间
+    console.log('sing')
+}
+
+js查找机制：1.对象实例查找 2.上一级原型对象 3. object.prototype 4.null 就近原则，优先使用近的
+
+
+
 
 
 **jQuery**
