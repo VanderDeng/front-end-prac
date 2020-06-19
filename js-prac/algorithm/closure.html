@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="nav">
+        <li>飞鱼罐头</li>
+        <li>大猪蹄子</li>
+    </ul>
+    <script>
+        // //闭包：fun的函数作用域访问了另一个函数fn的局部变量
+        // // fn外面的作用域可以访问fn内部的局部变量
+        // function fn(){
+        //     var num = 10;
+        // //     function fun(){
+        // //         console.log(num);
+                
+        // //     }
+        // //     return fun;
+        // // }
+        //     return function(){
+        //         console.log(num);
+                
+        //     }
+        // }
+        // var f = fn();
+        // f();
+        var lis = document.querySelector('.nav').querySelectorAll('li');
+        for (var i = 0; i < lis.length; i++){
+            lis[i].index = i;
+            lis[i].onclick = function(){
+                console.log(i);
+                
+            }
+        }
+        // 2.利用闭包
+        for(var i = 0; i<lis.length; i++){
+            (function(i){
+                // console.log(i);
+                lis[i].onclick = function(){
+                    console.log(i);
+                    
+                }
+                
+            })(i);
+        }
+        // 3.
+        for(var i = 0; i<lis.length; i++){
+            (function(i){
+                setTimeout(function() {
+                    console.log(lis[i].innerHTML);
+                    
+                }, 3000);
+            })(i);
+        }
+
+        // 打车价格
+        var car = (function(){
+            var start = 13;
+            var total = 0;
+            return {
+                price: function(n){
+                    if (n <= 3){
+                        total = start;
+                    } else{
+                        total = start + (n - 3)*5
+                    }
+                    return total;
+                },
+                crowed: function(flag){
+                    return flag ? total + 10 : total;
+                }
+            }
+        })()
+        
+        </script>
+    
+</body>
+</html>

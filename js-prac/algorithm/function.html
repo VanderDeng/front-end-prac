@@ -1,0 +1,127 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button>click</button>
+    <script>
+    // 函数的调用方式
+
+    // 1.普通函数  this指向window
+    function fn(){
+        console.log('just do IT');
+        
+    }
+    fn(); fn.call();
+
+    // 2.对象的方法 this指向对象o
+    var o = {
+        sayHi: function(){
+            console.log('just do it');
+            
+        }
+    }
+    o.sayHi();
+
+    // 3.构造函数 this指向实例对象，原型对象里面的this也是实例对象
+    function Star(){};
+    new Star ();
+
+    // // 4.绑定事件函数 this指向函数的调用者，这里是btn
+    // btn.onclick = function(){};
+
+    // // 5.定时器函数 this指向的是window
+    // setInterval(function(){},2000);
+
+    // 6.立即执行函数 this指向的是window
+    (function(){
+        console.log('just do it');
+        
+    }())
+
+    // 改变this的指向
+
+    // 1.call()
+    var o = {
+        name:'andy',
+    }
+
+    function fn(a,b){
+        console.log(this);
+        console.log(a + b);
+        
+        
+    }
+
+    fn.call(o,1,2)
+
+    function  Father(uname, age,sex){
+        this.uname = uname;
+        this.age = age;
+        this.sex = sex
+    }
+    function Son(uname, age, sex){
+        Father.call(this, uname, age, sex);
+    }
+    var son = new Son('ldh',18,'male');
+    console.log(son);
+
+    // 2.apply();
+    var o = {
+        name : 'andy'
+    }
+    
+    function fn(arr){
+        console.log(this);
+        console.log(arr);
+        
+    }   
+
+    fn.apply(o,['pink'])
+    // 
+    var arr = [1,66,3,99,4]
+
+    var max = Math.max.apply(Math,arr);
+    console.log(max);
+
+    // 3.bind
+    var o = {
+        name : 'andy'
+    }
+    
+    function fn(){
+        console.log(this);
+        
+    }
+    var f = fn.bind(o)
+    f();
+
+    var btn = document.querySelector('button');
+    btn.onclick = function(){
+        this.disabled = true;
+        btn.innerHTML = '请在'
+        setTimeout(function(){
+            this.disabled = false;
+            
+            
+        }.bind(this), 15000);
+    }
+    // 高阶函数
+
+    function fn(a,b,callback){
+        console.log(a + b);
+        callback && callback();
+        
+    }
+    fn(1,2, function(){
+        console.log('last');
+        
+    })
+
+    </script>
+
+</body>
+</html>
