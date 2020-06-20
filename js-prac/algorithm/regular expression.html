@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 
+        var regexp = new RegExp(/123/);
+
+        // 只要包含abc
+        var rg = /123/;
+
+        // 精确匹配必须是abc
+        var reg = /^abc$/;
+
+        //  /[abc]/ 只要包含abc中任何一个都可以true
+        var rg = /[abc]/
+
+        var rg = /^[abc]$/ //只有是其中一个才可以
+        var rg = /^[a-z]$/  //26个字母任意一个
+
+        var reg = /^[a-zA-Z0-9_-]$/
+        var reg = /^[^a-zA-Z0-9_-]$/ //表示取反
+        
+        // 量词
+        // 1+次
+        var reg = /^a+$/
+        console.log(reg.test(''));
+        console.log(reg.test('aaaa'));
+
+        var reg = /^a?$/ // 1｜｜0
+        var reg = /^a*$/  //多次
+        // 重复3次
+        var reg = /^a{3}$/
+        // 大于等于3次
+        var reg = /^a{3，}$/
+        // 大于等于3小于等于16
+        var reg = /^a{3，16}$/
+
+        var reg = /^[a-zA-Z0-9_-]{6,16}$/
+        
+
+    
+    </script>
+    
+</body>
+</html>
