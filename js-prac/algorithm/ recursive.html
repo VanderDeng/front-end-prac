@@ -7,6 +7,7 @@
 </head>
 <body>
     <script>
+        // 阶乘
         function fn(n){
             if (n ===1){
                 return 1;
@@ -15,6 +16,73 @@
         }
         console.log(fn(3));
         
+        // 斐波那契数列
+        function fb(n){
+            if (n === 1 || n ===2 ){
+                return 1;
+            }
+            return fb(n-1) + fb(n-2)
+        }
+
+        // 数据对象
+        var data = [{
+            id:1,
+            name:'家电',
+            goods:[{
+                id:11,
+                gname:'冰箱',
+                goods:[{
+                    id:111,
+                    gname:'海尔',
+                },{
+                    id:112,
+                    gname:'美的',
+                }]
+            },{
+                id:12,
+                gname:'洗衣机'
+            }]
+        },{
+            id:2,
+            name:'服饰',
+        }]
+        // 利用foreach遍历对象
+        var o = {}
+        function getID(json, id){
+            json.forEach(function(item){
+                if(item.id === id){
+                    o = item;
+                    return item;
+                    // 2.inner data  
+                }   else if (item.goods && item.goods.length >0 ){
+                    o = getID(item.goods, id);
+                }
+                
+            })
+        }
+        console.log(getID(data,1));
+
+        // 深拷贝
+        var o = {}
+        function deepCopy(newobj, lodobj){
+            for(var k in oldobj){
+                // 判断属性值
+                var item = oldobj[k];
+                // 数组
+                if(item instanceof Array){
+                    newobj[k]= [];
+                    deepCopy(newobj[k],item)
+                } else if(item instanceof Object){
+                    newobj[k]= {};
+                    deepCopy(newobj[k],item);
+
+                }   else{
+                    newobj[k]= item;
+                }                // 对象
+                // 简单类型
+            }
+        }
+        deepCopy(o,obj);
         
         </script>
 </body>
