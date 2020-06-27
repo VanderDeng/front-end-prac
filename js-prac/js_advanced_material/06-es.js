@@ -1,12 +1,18 @@
-const calendar = {
-    currentDay : 6,
-    nextDay: function(){
-        setTimeout(()=> {
-            this.currentDay +=1;
-            console.log(this.currentDay);
-            
-        });
-    }
-};
 
-calendar.nextDay();
+let startTime;
+
+function appStart(){
+    startTime = new Date();
+    console.log("app started");
+    
+}
+
+function timestamp(){
+    console.log(`${new Date() - startTime} ms passed`);
+    
+}
+
+appStart();
+setTimeout (() => {
+    timestamp();
+}, 3000)
