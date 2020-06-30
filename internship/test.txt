@@ -1,0 +1,38 @@
+-------------HTML--------------
+1.meta标签的作用
+移动端适配，seo优化，忽略手机自动识别电话/邮箱
+
+2.工作中常用的标签
+div, span, p, h, i(icon图标)
+
+3.让子元素position:absolution生效，父元素也需要设置positnon
+css3中：translate效果相同
+
+4.
+
+
+
+-------------CSS--------------
+1.margin重叠问题
+子元素和父元素重叠，bfc解决Block Formatting Context。盒模型布局的CSS渲染模式，渲染成一个隔离的容器。
+解决：最优解是：display:inline-block。其他比如overflow：hidden，或者用position。
+
+2.em和rem
+em会根据自己字体的大小，除非没有设置大小，他便会进行继承。
+
+3.bootstrap栅格系统原理
+container画容器，row画行，col画每一列。row做了清楚浮动，通过为“列（col）”设置padding属性，从而创建列与列之间的间隔。通过为.row元素设置负值margin从而抵消掉为.container元素设置的padding,也就间接为“行（row）”所包含的“列（col）”抵消掉了padding
+负值的margin就是下面的示例为什么是 向外突出的原因。在栅格列中内容排成一行。
+
+
+
+
+
+
+
+-------------JS--------------
+
+
+
+
+-------------协议理论--------------
