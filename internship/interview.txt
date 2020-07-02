@@ -31,6 +31,9 @@ container画容器，row画行，col画每一列。row做了清楚浮动，通�
 
 
 -------------JS--------------
+JS 数据类型可分为基本数据类型和复合数据类型两种，其中基本数据类型有五种：字符串（String）、数字(Number)、布尔(Boolean)、空（Null）、未定义（Undefined）。复合数据类型即 Object，Object 本质是一组无序的名值对组成的，严格来说，又被分为三类：对象(Object)、数组(Array)、函数（function）。
+
+
 
 
 
